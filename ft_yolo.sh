@@ -1,0 +1,20 @@
+#!/bin/bash
+yolo train model=runs/detect/train/weights/best.pt \
+    data=configs/yolo-bvn.yaml \
+    epochs=100 \
+    imgsz=320 \
+    batch=16 \
+    lr0=0.001 \
+    patience=30 \
+    augment=True \
+    hsv_h=0.015 \
+    hsv_s=0.7 \
+    hsv_v=0.4 \
+    degrees=10.0 \
+    translate=0.1 \
+    scale=0.5 \
+    shear=2.0 \
+    mosaic=1.0 \
+    project=runs/detect \
+    name=train_finetune \
+    device=cpu
